@@ -1,6 +1,6 @@
 package DeliveryGen
 
-    class Cliente( nome: String, telefone: String, var email: String, var senha: String, var endereco: String):
+class Cliente( nome: String, telefone: String, var email: String, var senha: String, var endereco: String):
           Pessoa(" "," ") {
 
          fun cadastroCliente(valor1 : String, valor2: String,valor3 : String,valor4 : String,valor5 : String ) {

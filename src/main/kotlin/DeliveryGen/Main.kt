@@ -79,12 +79,12 @@ fun main() {
         )
         val continua = readLine()!!.toInt()
     } while (continua != 1)
-    do {
-        //Função pedido
-        println("Deseja pedir? Sim/Não")
-        val mensagem = readLine()!!
-        card.fazPedido(mensagem)
 
+    //Função pedido
+    println("Deseja pedir?")
+    val mensagem = readLine()!!
+    card.fazPedido(mensagem)
+    do {
 
 
         do {
@@ -112,6 +112,15 @@ fun main() {
                 4 -> {
                     println("Pedido finalizado com sucesso!\n")
 
+                    var result = 0.0
+
+                    card.listaDePagamentoP.forEach{
+                        result += it  }
+                    println("Seu Carrinho:" +
+                            "\nPizza: ${card.listaDeCompras} e de adicionais ${card.listaDeAdicionais}" +
+                            "O valor total é de: $result" )
+
+
                 }
 
             }
@@ -126,11 +135,33 @@ fun main() {
         println("Digite a opção desejada")
         val opcao = readLine()!!.toInt()
 
+        if (opcao == 1){
+
+            var result = 0.0
+            card.listaDePagamentoP.forEach{
+                result += it  }
+
+do{
+            println("Digite o valor do dinheiro que será dado:")
+            val valorRecebido = readLine()!!.toDouble()
+
+            if(valorRecebido == result){
+                println("Ok! Não precisa de troco")
+
+            }  else if (valorRecebido > result) {
+                var troco = 0.0
+                troco = valorRecebido - result
+                println("O troco é: ${"%.2f".format(troco)}")
+            } else {
+                println("Valor inválido, é necessário um valor maior para o pagamento.")
+            }
+}while (valorRecebido < result)
+        }
+
         if (opcao < 1 || opcao > 4) {
             println("\nOPÇÃO NÂO EXISTE!\n")
-
-
         }
+
     }while (opcao == 3)
 
     var result = 0.00
@@ -138,11 +169,12 @@ fun main() {
         result += it
     }
 
+
+
     println("O total da compra é $result")
     card.feedback()
 
     cadEntregador.recebePedido(dados = cadCliente)
     card.mostrar()
-    println("O valor da compra foi $result")
 
 }
