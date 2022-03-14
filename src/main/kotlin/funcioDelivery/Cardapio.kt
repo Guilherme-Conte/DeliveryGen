@@ -17,21 +17,21 @@ open class Cardapio {
                 println("\n* * *CARDÁPIO PIZZA SALGADA * * *")
                 println(
                     "Por favor, escolha entre nossas opções no cardápio: " +
-                            "\n1 - Calabresa\n" +
-                            "2 - Portuguesa\n" +
-                            "3 - Marguerita\n" +
-                            "4 - Frango com catupiry\n" +
-                            "5 - Muçarela\n" +
-                            "6 - Quatro queijos\n"
+                            "\n1 - Calabresa R$32,99\n" +
+                            "2 - Portuguesa R$35,99\n" +
+                            "3 - Marguerita R$29,99\n" +
+                            "4 - Frango com catupiry R$39,99\n" +
+                            "5 - Mussarela R$19,99\n" +
+                            "6 - Quatro queijos R$24,99\n"
                 )
 
                 println(
                     "\n* * *CARDÁPIO PIZZA DOCE * * * " +
                             "Por favor, escolha entre nossas opções no cardápio: " +
-                            "\n7 - Brigadeiro\n" +
-                            "8 - Chocolate\n" +
-                            "9 - Banana\n" +
-                            "10 - Romeu e Julieta\n"
+                            "\n7 - Brigadeiro R$44,99\n" +
+                            "8 - Chocolate R$39,99\n" +
+                            "9 - Banana R$42,99\n" +
+                            "10 - Romeu e Julieta R$54,99\n"
                 )
 
                 val opc2 = readLine()!!.toInt()
@@ -59,8 +59,8 @@ open class Cardapio {
                         listaDePagamentoP.add(39.99)
                     }
                     5 -> {
-                        println("Você escolheu a pizza de Muçarela")
-                        listaDeCompras.add("Muçarela")
+                        println("Você escolheu a pizza de Mussarela")
+                        listaDeCompras.add("Mussarela")
                         listaDePagamentoP.add(19.99)
                     }
                     6 -> {
@@ -104,10 +104,10 @@ open class Cardapio {
 
                     println(
                         "Escolha o sabor: " +
-                                "\n1 - Catupiry\n" +
-                                "\n2 - Cheddar\n" +
-                                "\n3 - Chocolate\n" +
-                                "\n4 - Doce de leite\n"
+                                "\n1 - Catupiry R$5,99\n" +
+                                "\n2 - Cheddar R$8,99\n" +
+                                "\n3 - Chocolate R$9,99\n" +
+                                "\n4 - Doce de leite R$9,99\n"
                     )
                     val borda = readLine()!!.toInt()
 

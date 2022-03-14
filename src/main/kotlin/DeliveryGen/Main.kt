@@ -79,12 +79,12 @@ fun main() {
         )
         val continua = readLine()!!.toInt()
     } while (continua != 1)
-
+    do {
         //Função pedido
-        println("Deseja pedir?")
+        println("Deseja pedir? Sim/Não")
         val mensagem = readLine()!!
         card.fazPedido(mensagem)
-    do {
+
 
 
         do {
@@ -143,5 +143,6 @@ fun main() {
 
     cadEntregador.recebePedido(dados = cadCliente)
     card.mostrar()
+    println("O valor da compra foi $result")
 
 }
